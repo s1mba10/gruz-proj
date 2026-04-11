@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-const PHONE = "+7 (XXX) XXX-XX-XX";
-const PHONE_HREF = "tel:+7XXXXXXXXXX";
+import { PHONE, PHONE_HREF, EMAIL, EMAIL_HREF } from "../../lib/contacts";
 
 const serviceLinks = [
   { href: "/gruzchiki", label: "Грузчики" },
@@ -62,10 +60,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@gruzim-krasnodar.ru"
+                  href={EMAIL_HREF}
                   className="transition-colors hover:text-white"
                 >
-                  info@gruzim-krasnodar.ru
+                  {EMAIL}
                 </a>
               </li>
               <li>Краснодар и Краснодарский край</li>

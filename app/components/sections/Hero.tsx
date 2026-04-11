@@ -1,8 +1,6 @@
 import { Phone } from "lucide-react";
 import ContactForm from "../ui/ContactForm";
-
-const PHONE = "+7 (XXX) XXX-XX-XX";
-const PHONE_HREF = "tel:+7XXXXXXXXXX";
+import { PHONE, PHONE_HREF } from "../../lib/contacts";
 
 const stats = [
   { value: "500+", label: "выполненных заказов" },

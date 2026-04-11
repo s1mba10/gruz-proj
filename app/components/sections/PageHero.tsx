@@ -1,7 +1,5 @@
 import { Phone } from "lucide-react";
-
-const PHONE = "+7 (XXX) XXX-XX-XX";
-const PHONE_HREF = "tel:+7XXXXXXXXXX";
+import { PHONE, PHONE_HREF } from "../../lib/contacts";
 
 interface PageHeroProps {
   title: string;
