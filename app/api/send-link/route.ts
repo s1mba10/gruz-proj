@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { formatLeadMessage, sendTelegram } from "@/app/lib/notifications";
+import { sendLead } from "@/app/lib/notifications";
 
 export async function POST(request: Request) {
   try {
@@ -12,9 +12,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const text = formatLeadMessage({ name, phone, message });
-
-    await sendTelegram(text);
+    await sendLead({ name, phone, message });
 
     return NextResponse.json({ ok: true });
   } catch (err) {
