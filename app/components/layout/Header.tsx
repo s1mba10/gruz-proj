@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
+import { PHONE, PHONE_HREF } from "../../lib/contacts";
 
 const navLinks = [
   { href: "/#services", label: "Услуги" },
@@ -10,9 +11,6 @@ const navLinks = [
   { href: "/#how-it-works", label: "Как работаем" },
   { href: "/#contacts", label: "Контакты" },
 ];
-
-const PHONE = "+7 (XXX) XXX-XX-XX";
-const PHONE_HREF = "tel:+7XXXXXXXXXX";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
