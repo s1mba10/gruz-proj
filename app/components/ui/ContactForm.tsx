@@ -24,7 +24,7 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/send-vk", {
+      const res = await fetch("/api/send-link", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, message }),
