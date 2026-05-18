@@ -1,7 +1,6 @@
 "use client";
 
 import { use, useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
 
 interface Props {
   searchParamsPromise: Promise<{ expired?: string; from?: string }>;
@@ -9,7 +8,6 @@ interface Props {
 
 export default function LoginForm({ searchParamsPromise }: Props) {
   const params = use(searchParamsPromise);
-  const router = useRouter();
 
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -34,11 +32,15 @@ export default function LoginForm({ searchParamsPromise }: Props) {
         setError(data.error || "Не удалось войти");
         return;
       }
-      const target = params.from && params.from.startsWith("/operator")
-        ? params.from
-        : "/operator";
-      router.replace(target);
-      router.refresh();
+      const safeFrom =
+        params.from &&
+        params.from.startsWith("/operator") &&
+        params.from !== "/operator/login"
+          ? params.from
+          : "/operator";
+      // Жёсткая навигация: полный запрос на сервер, чтобы middleware
+      // увидел свежевыставленную cookie и пропустил на панель.
+      window.location.assign(safeFrom);
     } catch {
       setError("Ошибка сети. Попробуйте ещё раз.");
     } finally {
