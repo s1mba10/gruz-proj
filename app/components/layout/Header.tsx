@@ -8,8 +8,8 @@ import { PHONE, PHONE_HREF } from "../../lib/contacts";
 const navLinks = [
   { href: "/#services", label: "Услуги" },
   { href: "/ceny", label: "Цены" },
+  { href: "/calculator", label: "Калькулятор" },
   { href: "/#how-it-works", label: "Как работаем" },
-  { href: "/#contacts", label: "Контакты" },
   { href: "/operator", label: "Оператор" },
 ];
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "../components/sections/PageHero";
 import FAQ from "../components/sections/FAQ";
 import CallToAction from "../components/sections/CallToAction";
+import TariffCatalog from "./TariffCatalog";
 
 export const metadata: Metadata = {
   title: "Цены на грузоперевозки в Краснодаре — тарифы и расчёт стоимости",
@@ -48,6 +49,18 @@ export default function CenyPage() {
         highlight="Краснодаре"
         description="Прозрачные тарифы без скрытых платежей. Цена фиксируется до начала работы и не меняется."
       />
+
+      <section className="bg-gray-bg py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h2 className="mb-2 text-2xl font-bold text-text-primary lg:text-3xl">
+            Каталог тарифов
+          </h2>
+          <p className="mb-6 text-sm text-text-secondary">
+            Отфильтруйте по категории, цене и объёму — найдите подходящий вариант за секунду.
+          </p>
+          <TariffCatalog />
+        </div>
+      </section>
 
       <section className="bg-white py-12 lg:py-20">
         <div className="mx-auto max-w-4xl px-4 lg:px-8">
